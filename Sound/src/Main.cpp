@@ -3,26 +3,36 @@
 #include <AL/al.h>
 #include <AL/alc.h>
 
-#include "SoundDevice.h"
-#include "SoundSource.h"
-#include "SoundBuffer.h"
+#include <chrono>
+#include <thread>
+
+#include "SoundManager.h"
 
 void DisplayALError(const char* msg, ALenum error);
 void DisplayALCError(const char* msg, ALCenum error);
 
+
+// main used for testing only, this will eventually be a static library
 int main()
 {
 	std::cout << "Starting Application!" << std::endl;
 
-	SoundDevice device;
+	SoundManager audio = SoundManager();
 
-	SoundSource source;
+	SoundBuffer* buffer = audio.AddBuffer("res/gmae.wav");
 
-	SoundBuffer buffer("res/gmae.wav");
+	for (size_t i = 0; i < 25; i++)
+	{
+		audio.Play(buffer);
+	}
 
-	source.Play(&buffer);
-	
-	std::cin.get();
+	while (!audio.IsFinished())
+	{
+		audio.Update(1 / 60.f);
+		std::this_thread::sleep_for(std::chrono::milliseconds(16));
+	}
+
+	std::cout << "Finished" << std::endl;
 }
 
 void DisplayALError(const char* msg, ALenum error)

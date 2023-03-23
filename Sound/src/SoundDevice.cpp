@@ -1,9 +1,9 @@
 #include "SoundDevice.h"
 
-SoundDevice::SoundDevice()
+SoundDevice::SoundDevice(const ALCchar* deviceName)
 {
    // open default device
-   m_Device = alcOpenDevice(nullptr);
+   m_Device = alcOpenDevice(deviceName);
    if (!m_Device) // verify success
       __debugbreak();
 

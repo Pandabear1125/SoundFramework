@@ -20,8 +20,10 @@ public:
 	~SoundBuffer();
 
 	ALuint GetID();
+	float GetDuration();
 
 private:
 	ALuint m_ID = 0;
+	float m_Duration = 0.f;
 
 };

@@ -28,6 +28,8 @@ SoundBuffer::SoundBuffer(const char* audioFilename)
       __debugbreak();
    }
 
+   m_Duration = float((float)sfinfo.frames / (float)sfinfo.samplerate);
+
    // get sound format and configure openal format
    format = AL_NONE;
    if (sfinfo.channels == 1)
@@ -100,4 +102,9 @@ SoundBuffer::~SoundBuffer()
 ALuint SoundBuffer::GetID()
 {
    return m_ID;
+}
+
+float SoundBuffer::GetDuration()
+{
+   return m_Duration;
 }

@@ -148,13 +148,17 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Main.cpp" />
+    <ClCompile Include="src\Sound.cpp" />
     <ClCompile Include="src\SoundBuffer.cpp" />
     <ClCompile Include="src\SoundDevice.cpp" />
+    <ClCompile Include="src\SoundManager.cpp" />
     <ClCompile Include="src\SoundSource.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Sound.h" />
     <ClInclude Include="src\SoundBuffer.h" />
     <ClInclude Include="src\SoundDevice.h" />
+    <ClInclude Include="src\SoundManager.h" />
     <ClInclude Include="src\SoundSource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

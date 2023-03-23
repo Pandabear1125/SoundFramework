@@ -14,7 +14,7 @@ void DisplayALCError(const char* msg, ALCenum error);
 class SoundDevice
 {
 public:
-	SoundDevice();
+	SoundDevice(const ALCchar* deviceName = nullptr);
 	~SoundDevice();
 
 private:
