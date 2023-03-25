@@ -3,6 +3,10 @@
 #include "SoundSource.h"
 #include "SoundDevice.h"
 
+//! Custom Sound Manager
+// Handles all OpenAL context, source, and buffer state
+// Manages audio playback and source/buffer creation/deletion
+// Fully handles destruction of OpenAL state
 class SoundManager
 {
 public:

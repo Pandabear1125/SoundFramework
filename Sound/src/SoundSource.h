@@ -5,6 +5,13 @@
 
 #include "SoundBuffer.h"
 
+static void DisplayALError(const char* msg, ALenum error);
+static void DisplayALCError(const char* msg, ALCenum error);
+
+//! OpenAL Sound Source
+// Holds a OpenAL ID and various playback properties
+// Manages playback and source state
+// Should be destroyed before buffers
 class SoundSource
 {
 public:

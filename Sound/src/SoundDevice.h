@@ -5,8 +5,8 @@
 #include <AL/al.h>
 #include <AL/alc.h>
 
-void DisplayALError(const char* msg, ALenum error);
-void DisplayALCError(const char* msg, ALCenum error);
+static void DisplayALError(const char* msg, ALenum error);
+static void DisplayALCError(const char* msg, ALCenum error);
 
 //! OpenAL Sound Device
 // Holds current OpenAL context and devices
